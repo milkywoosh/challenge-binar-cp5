@@ -1,0 +1,68 @@
+view engine:
+    - pug
+    - ejs
+    -
+
+ -- KRITERIA
+1. Mengetahui perbedaan arsitektur Monolitik dan Microservice secara garis besar
+2. Menggunakan package yang diinstall dengan menggunakan NPM/YARN
+3. Serving static HTML, static file dan json ke browser
+4. Menggunakan metode routing untuk memisahkan tiap halaman
+5. Menggunakan middleware untuk akun statis
+6. Menerapkan view engine untuk menampilkan HTML File
+7. Menyediakan endpoint dengan tipe data JSON dari data statis
+8. Membuat dan melakukan import export module
+9. Push ke git untuk di-review
+
+WHAT TO DO in chapter 5
+    1. Pindahkan code challenge pada chapter 3 dan 4 yang 
+        semula merupakan HTML statis ke dalam server menggunakan Express, 
+        halaman 1 dengan yang lainnya dibedakan dengan routing
+    2. Membuat data user static untuk login di bagian backend
+    3. Menggunakan Postman untuk mengecek API
+    4. Serving data user static ke bentuk JSON
+
+
+
+check environment:
+    console.log(`NODE_ENV: ${process.env.NODE_ENV}`)
+      --> if we dont set it: it will output "development" by default
+
+
+set PORT in environment variable:
+    export PORT=3000
+
+
+req.params.any:
+    used when we want to find something based on editted API or address in URT
+        /api/bootcamp-chapter/:part
+        so,  it should req.params.part
+
+
+// flow
+    register -> login -> /api/home-page -> click "PLAYNOW" in home-page
+    -> direct to playing game suit -> can go back to home-page
+
+
+
+
+- pertanyaan
+    const data = {
+        error: null,
+        message: `Server up and running on 3000`,
+    }
+    res.send(JSON.stringify(data))  --->> sebenernya JSON.stringify(data)  ini buat apa ya dlm implementasinya
+                                    soalnyakan kita biasanya maunya send tampilan page brdasarkan alamat api?
+
+
+
+https://stackoverflow.com/questions/48778619/node-express-refused-to-apply-style-because-its-mime-type-text-html
+
+
+- utk go to specific page, we can use ROUTE "/api/home-page"  and put in "href" to direct us
+     <a class="nav-link" href="/api/home-page">LOGIN</a>
+
+
+still stuck sendFile('index.html) using express.static:
+    solution : always use "static" name for this middleware
+                    --> app.use(express.static(path.join(__dirname, "static")));
