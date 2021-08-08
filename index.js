@@ -50,22 +50,6 @@ app.get('/api', (req, res) => {
 const api_chapter = require('./handler-route/index-route');
 app.use('/api/bootcamp-chapter', api_chapter);
 
-/*
-
-app.get('/api/bootcamp-chapter/:part', (req, res) => {
-    // choice: 3,4,5 else not found
-    // logic to find email
-    // req.params.email ==> request parameter  : contoh: :part 
-    const parts = chapters.find( ({ part }) => part == parseInt(req.params.part));
-    if (!parts) {
-        res.status(404).send("The chapter part is not found");
-    }
-
-    res.send(parts);
-});
-
-*/
-
 // done
 //  using .ejs extension
 // home page at chapter3
@@ -77,7 +61,6 @@ app.get('/api/home-page/game-suit', handlingSuitGame);
 
 
 // done
-// root: path.join(__dirname, '../path')
 // merubah '/chapter3' akan pengaruh ke proses rendering, apalagi jika route sudah digunakan sebelumnya
 app.get('/chapter3', (req, res) => {
     res.sendFile('index.html' ,
@@ -99,7 +82,6 @@ app.get('/api/home-page/login', handlingLogin);
 app.post('/api/home-page/login', handlingInputLogin);
 
 
-
 // contoh random
 app.get('/tes_contoh', (req, res) => {
     res.render('index_exmpl-top-express', {
@@ -108,10 +90,6 @@ app.get('/tes_contoh', (req, res) => {
         link: 'https://google.com'
       });
 }); 
-
-
-// then if PLAYNOW
-
 
 // firstly PORT at environment var hasnt been set
 // then set it: "export PORT=anyport"  at terminal 

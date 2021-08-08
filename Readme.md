@@ -22,5 +22,8 @@
 
     - /api/home-page/login
     - /api/home-page/register
+    - /api/home-page/game-suit
+
+    - /tes_contoh
     
 

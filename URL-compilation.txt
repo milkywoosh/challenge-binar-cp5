@@ -13,4 +13,6 @@
 - /api/home-page/login
 - /api/home-page/register
 
+- /tes_contoh
+
 
