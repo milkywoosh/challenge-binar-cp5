@@ -1,13 +1,26 @@
 ## Quick Start
 
-    Test:
+    Start the project:
      ```
-     anything
+     npm run mulai
 
      ```
 
-## Test
+## API Tersedia
 
-    Hello:
+    + localhost: 3000
+
+    - /api/
+
+    - /api/bootcamp-chapter/:part    --> [3,4,5] else not found
+
+    - /home-testing
+
+    - /api/home-page
+
+    - /chapter3    --> rendering html without view engine
+
+    - /api/home-page/login
+    - /api/home-page/register
     
 
