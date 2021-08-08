@@ -1,4 +1,3 @@
-// const { reduce } = require('async');
 const express = require('express');
 const app = express();
 const morgan = require('morgan'); // 3rd middleware
