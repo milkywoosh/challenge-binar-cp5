@@ -66,3 +66,11 @@ https://stackoverflow.com/questions/48778619/node-express-refused-to-apply-style
 still stuck sendFile('index.html) using express.static:
     solution : always use "static" name for this middleware
                     --> app.use(express.static(path.join(__dirname, "static")));
+
+
+- if there is several files failed to add to repo
+    - first check if there is existed .git file inside the folder
+    - if yes, delete it :  rm -rf .git
+    - then goto main or root folder to delete main .git file
+    - then create new one!
+    - successfully add . all files, folder, and subfolders
