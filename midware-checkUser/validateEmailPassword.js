@@ -1,6 +1,5 @@
 const { users } = require("../user-db/user-data");
 const Joi = require('joi'); // this return as a class, so first letter is uppercase
-const { fail, clientError } = require('../response-json/index-json');
 
 /*
     have email?

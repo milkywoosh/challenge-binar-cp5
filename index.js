@@ -4,7 +4,7 @@ const morgan = require('morgan'); // 3rd middleware
 const path = require('path');
 
 require('dotenv').config();
-const { handlingLogin, handlingInputLogin, handlingHomePage, handlingSuitGame, handlingRegister } = require('./handler-page');
+const { handlingLogin, handlingHomePage, handlingSuitGame, handlingRegister } = require('./handler-page');
 const { validateEmailPassword } = require('./midware-checkUser/validateEmailPassword');
 /* view engine -----
  it is a must to put any ".ejs" file inside "views" folder
@@ -48,7 +48,7 @@ app.get('/api', (req, res) => {
 
 // import json db
 const api_chapter = require('./handler-route/index-route');
-app.use('/api/bootcamp-chapter', api_chapter);
+app.use('/api/bootcamp-chapter', api_chapter);//  /api/bootcamp-chptr/3 --> [3,4,5] else not found
 
 // done
 //  using .ejs extension
@@ -71,15 +71,6 @@ app.get('/chapter3', (req, res) => {
         });
 });
 
-
-
-
-// app.post('/api/checkBody', validateEmailPassword);
-
-
-
-
-
  
 // register
 app.get('/api/home-page/register', handlingRegister);
@@ -88,7 +79,7 @@ app.post('/api/home-page/register', handlingRegister);
 // login 
 app.get('/api/home-page/login', handlingLogin);
 // input login 
-app.post('/api/home-page/login', validateEmailPassword);
+app.post('/api/home-page/login', validateEmailPassword); // Joi
 
 
 // contoh random
