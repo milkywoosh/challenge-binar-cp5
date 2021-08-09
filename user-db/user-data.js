@@ -3,8 +3,8 @@
 module.exports = {
 
     users: [
-        { email: "lkm@home.com", password: 123 },
-        { email: "jon@home.com", password: 123 },
+        { email: "lkm@gmail.com", password: "oke123" },
+        { email: "jon@gmail.com", password: "oke123" },
         ]
 }
 

@@ -7,8 +7,7 @@ module.exports = {
         })
     },
     fail: (arg_response, arg_message) => {
-        arg_response.send(200).json({
-            status: "fail",
+        arg_response.send(200).send({
             arg_message,
         })
 

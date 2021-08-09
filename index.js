@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan'); // 3rd middleware
 const path = require('path');
+
 require('dotenv').config();
 const { handlingLogin, handlingInputLogin, handlingHomePage, handlingSuitGame, handlingRegister } = require('./handler-page');
-
+const { validateEmailPassword } = require('./midware-checkUser/validateEmailPassword');
 /* view engine -----
  it is a must to put any ".ejs" file inside "views" folder
  bcs it is the default folder to lookup
@@ -70,6 +71,15 @@ app.get('/chapter3', (req, res) => {
         });
 });
 
+
+
+
+// app.post('/api/checkBody', validateEmailPassword);
+
+
+
+
+
  
 // register
 app.get('/api/home-page/register', handlingRegister);
@@ -78,7 +88,7 @@ app.post('/api/home-page/register', handlingRegister);
 // login 
 app.get('/api/home-page/login', handlingLogin);
 // input login 
-app.post('/api/home-page/login', handlingInputLogin);
+app.post('/api/home-page/login', validateEmailPassword);
 
 
 // contoh random
@@ -92,7 +102,7 @@ app.get('/tes_contoh', (req, res) => {
 
 // firstly PORT at environment var hasnt been set
 // then set it: "export PORT=anyport"  at terminal 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 app.listen(port, () => {
     console.log(`listen to ${port}`);
 });

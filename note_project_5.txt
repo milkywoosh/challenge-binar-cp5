@@ -74,3 +74,6 @@ still stuck sendFile('index.html) using express.static:
     - then goto main or root folder to delete main .git file
     - then create new one!
     - successfully add . all files, folder, and subfolders
+
+- validation input: Joi 
+- reference: https://www.youtube.com/watch?v=u9kxYilQ9l8

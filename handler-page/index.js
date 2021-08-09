@@ -25,6 +25,7 @@ module.exports = {
                 // res.redirect('/api/home-page', {email: email})
                 res.render('index-cp3', {user: name});
             } else {
+                alert("please recheck your acc or password")
                 res.redirect('/api/home-page/login');
             }
         }
